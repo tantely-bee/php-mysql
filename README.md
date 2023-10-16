@@ -1,2 +1,2 @@
 # Screenshot
-![](docs/screenshot.png)
+![](screenshot.png)
