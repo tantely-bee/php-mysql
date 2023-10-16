@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: webapp
+spec:
+   strategy:
+      type: Recreate
+   replicas: 3
+   selector:    
+    matchLabels:
+     app: webapp
+   template:
+      metadata:
+        labels:
+          app: webapp
+      spec:
+       containers:
+        - name: website
+          image: ranjarat/app
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
+---
+
+apiVersion: v1
+kind: Service                             
+metadata:
+  name: webapp
+  labels:
+    app: webapp
+spec:
+  ports:
+    - port: 80                               
+      targetPort: 80                    
+  selector:
+    app: webapp                    
+  type: LoadBalancer    
