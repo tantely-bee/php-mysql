@@ -16,11 +16,10 @@ spec:
       spec:
        containers:
         - name: website
-          image: ranjarat/app
+          image: ranjarat/webapp
           imagePullPolicy: Always
           ports:
           - containerPort: 80
-          - targetPort: 80
 ---
 
 apiVersion: v1
