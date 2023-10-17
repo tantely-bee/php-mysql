@@ -34,7 +34,7 @@
         <thead>
           <tr>
             <th>a</th>
-            <th>Description</th>
+            <th>Descrdiption</th>
             <th>Created At</th>
             <th>Action</th>
           </tr>
