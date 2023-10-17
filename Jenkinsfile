@@ -37,7 +37,7 @@ pipeline{
             steps{
                 sh "sed -i 's/webapp:latest/webapp:0.${env.BUILD_ID}/g' deployment.yaml"
                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
-                'gcloud cloud-shell ssh --command="kubectl get pods"  --authorize-session'
+                sh 'gcloud cloud-shell ssh --command="kubectl get pods"  --authorize-session'
             }
         }
     }
