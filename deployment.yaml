@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: webapp
+  name: webapp
 spec:
-   updateStrategy:
-      type: RollingUpdate
-   replicas: 3
-   selector:    
+  updateStrategy:
+    type: RollingUpdate
+  replicas: 3
+  selector:    
     matchLabels:
-     app: webapp
-   template:
-      metadata:
-        labels:
-          app: webapp
-      spec:
-       containers:
+    app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
         - name: website
           image: ranjarat/webapp
           imagePullPolicy: Always
