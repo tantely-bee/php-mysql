@@ -4,10 +4,7 @@ metadata:
    name: webapp
 spec:
    strategy:
-      type: RollingUpdate
-      rollingUpdate:
-        maxSurge: 1
-        maxUnavalaible: 1
+      type: Recreate
    replicas: 3
    selector:    
     matchLabels:
