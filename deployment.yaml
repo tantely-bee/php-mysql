@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
    name: webapp
 spec:
-   strategy:
-      type: Recreate
+   updateStrategy:
+      type: RollingUpdate
    replicas: 3
    selector:    
     matchLabels:
