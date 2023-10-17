@@ -19,7 +19,7 @@ spec:
           app: webapp
       spec:
        containers:
-        - name: website
+        - name: webapp
           image: ranjarat/webapp
           imagePullPolicy: Always
           ports:
