@@ -33,9 +33,9 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Task</th>
+            <th>Tâches</th>
             <th>Description</th>
-            <th>Created At</th>
+            <th>Crée le</th>
             <th>Action</th>
           </tr>
         </thead>
