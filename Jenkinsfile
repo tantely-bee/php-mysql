@@ -37,7 +37,10 @@ pipeline{
             steps{
                 sh "sed -i 's/webapp:latest/webapp:0.${env.BUILD_ID}/g' deployment.yaml"
                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
-                //sh 'gcloud cloud-shell ssh --command="kubectl get pods"  --authorize-session'
+                sh 'gcloud auth login --quiet --cred-file=/home/tatelrazafimahefa/test.json'
+                sh 'gcloud container clusters get-credentials autopilot-cluster --region asia-east1-a --project boxwood-destiny-401815'
+                sh 'kubectl set image deployment webapp webapp=ranjaratwebapp:latest
+'
             }
         }
     }
