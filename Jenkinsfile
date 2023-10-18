@@ -39,7 +39,7 @@ pipeline{
                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
                 sh 'gcloud auth login --quiet --cred-file=/home/tatelrazafimahefa/test.json'
                 sh 'gcloud container clusters get-credentials autopilot-cluster --region asia-east1-a --project boxwood-destiny-401815'
-                sh 'kubectl set image deployment webapp webapp=ranjaratwebapp:latest
+                sh 'kubectl set image deployment webapp webapp=ranjarat/jwebapp:latest
 '
             }
         }
