@@ -33,8 +33,8 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>222222</th>
-            <th>Descrdiption</th>
+            <th>Task</th>
+            <th>Description</th>
             <th>Created At</th>
             <th>Action</th>
           </tr>
