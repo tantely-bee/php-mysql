@@ -3,7 +3,7 @@ pipeline{
     environment{
         PROJECT_ID = 'boxwood-destiny-401815'
         CLUSTER_NAME = 'autopilot-cluster'
-        LOCATION = 'us-central1-c'
+        LOCATION = 'asia-east1-a'
         CREDENTIALS_ID = '89d535d3-12ce-47ba-9d62-cd51c2ea692f'
     }
 
