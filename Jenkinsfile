@@ -40,7 +40,6 @@ pipeline{
                 sh 'gcloud auth login --quiet --cred-file=/home/tatelrazafimahefa/test.json'
                 sh 'gcloud container clusters get-credentials autopilot-cluster --region asia-east1-a --project boxwood-destiny-401815'
                 sh 'kubectl set image deployment webapp webapp=ranjarat/webapp:latest'
-'
             }
         }
     }
