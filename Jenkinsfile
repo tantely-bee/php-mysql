@@ -2,8 +2,8 @@ pipeline{
     agent any
     environment{
         PROJECT_ID = 'boxwood-destiny-401815'
-        CLUSTER_NAME = 'autopilot-cluster'
-        LOCATION = 'asia-east1-a'
+        CLUSTER_NAME = 'cluster'
+        LOCATION = 'us-central1-c'
         CREDENTIALS_ID = '89d535d3-12ce-47ba-9d62-cd51c2ea692f'
     }
 
@@ -27,7 +27,7 @@ pipeline{
                 script{
                     docker.withRegistry('https://registry.hub.docker.com', 'hub'){
                         webapp.push("latest")
-                        webapp.push("0.${env.BUILD_ID}")
+                        webapp.push("1.${env.BUILD_ID}")
                     }
                 }
             }
@@ -38,7 +38,7 @@ pipeline{
                 sh "sed -i 's/webapp:latest/webapp:0.${env.BUILD_ID}/g' deployment.yaml"
                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
                 sh 'gcloud auth login --quiet --cred-file=/home/tatelrazafimahefa/test.json'
-                sh 'gcloud container clusters get-credentials autopilot-cluster --region asia-east1-a --project boxwood-destiny-401815'
+                sh 'gcloud container clusters get-credentials cluster --zone us-central1-c --project boxwood-destiny-401815'
                 sh 'kubectl set image deployment webapp webapp=ranjarat/webapp:latest'
             }
         }
