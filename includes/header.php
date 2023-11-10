@@ -13,7 +13,7 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="index.php"><h1>MEMORE ENI 22</h1></a>
+        <a class="navbar-brand" href="index.php"><h1> ENI 22</h1></a>
       </div>
     </nav>
 
