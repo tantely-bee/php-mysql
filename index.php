@@ -34,7 +34,7 @@
         <thead>
           <tr>
             <th>Tâches</th>
-            <th>test123</th>
+            <th>Description</th>
             <th>Crée le</th>
             <th>Action</th>
           </tr>
