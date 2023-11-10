@@ -34,7 +34,7 @@
         <thead>
           <tr>
             <th>Tâches</th>
-            <th>Description</th>
+            <th>DescripItion</th>
             <th>Crée le</th>
             <th>Action</th>
           </tr>
